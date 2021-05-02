@@ -30,11 +30,11 @@
     :root {
         --fs-h1: 4.5rem;
         --fs-h2: 3.75rem;
-        --fs-h3: 1.5rem;
-        --fs-h4: 1.5rem;
+        --fs-h3: 1.7rem;
+        --fs-h4: 1.55rem;
         --fs-h5: 1.45rem;
-        --fs-h6: 1.35rem;
-        --fs-body: 1.3rem;
+        --fs-h6: 1.4rem;
+        --fs-body: 1.36rem;
     }
 }
 
@@ -114,6 +114,10 @@ p { font-size: var(--fs-body);}
     align-items: center;
     margin: 0;
     padding: 0;
+}
+
+#res:hover::before {
+    content: "Download ";
 }
 
 

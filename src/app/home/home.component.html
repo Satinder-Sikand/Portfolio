@@ -1,0 +1,99 @@
+<section class="intro" id="home">
+    <h1 class="section_intro intro_title">
+        Hi, my name is <strong style="display: block; margin-top: 0.1em; margin-bottom: 0.15em; font-size: 5.1rem;">Satinder Sikand</strong>
+    </h1>
+    <p class="section_sub section_sub_intro" style="display: inline-block;">Software Engineering Student</p>
+    <img src="./assets/Pictures/Satinder-prof3.png" alt="Picture of Satinder" class="intro-img">
+</section>
+
+<!-- About Me -->
+<section id="about-me" class="about">
+    <h2 class="section_title title-about">A Bit About Me</h2>
+    <p class="subtitle subtitle-about"><em>Great to meet you!</em></p> <!-- Maybe switch with h3 -->
+    
+    <div class="about-me_body">
+        <p id="about-me-sum">Curious about me, eh? Happy to oblige! As you can tell, my name is <em><strong>Satinder Sikand</strong></em>. If you have 
+        come here from my resume, you might be a recruiter or hiring manager. If that's the case, then I look forward to meeting you! If not, enjoy surfing through my website.</p>
+        <p id="about-me-sum">
+            I am a software engineering graduate from York University. Well, specifically the Lassonde School of Engineering at YU, but YU nonetheless.
+            I interned at Amazon (AWS) in 2022 and graduated later in May 2023, so I am currently looking for new grad roles.
+        </p>
+        
+
+        <div class="slides" id="slide">
+            <h6 style="padding: 1rem;"><em>A few pictures of me</em></h6>
+            <app-slideshow></app-slideshow>
+        </div>          
+        
+        <button class="subtitle subtitle-about" (click)="toggleLearnMore()">{{getLearnMore() ? "Show Less" : "Learn More"}}</button>
+        <div *ngIf="getLearnMore()" [@inOutAnimation]>
+            <div class="learn-more">
+                <p id="about-me-sum">
+                    Programming is a passion of mine, and has been ever since I first stumbled upon it at Gr. 10. I have always wanted to develop and help maintain
+                    software that will be used around the world, and leave a positive impact on society. If our goals align, please reach out and connect with me! 
+                    Even if your mission or goal differs, don't let that stop you from reaching out. You can never have too many friends! Well, unless LinkedIn 
+                    has a friends limit that no one has noticed or reached yet.
+                </p>
+                <p id="about-me-sum">
+                    But that's all work. Let's move onto something else. I recently got an Xbox which I'm loving, but I've mostly been a PS fan. Their single player
+                    games are the best of the best. But game pass is a steal and Starfield is coming soon! So let's see how that goes. On pc, there's not much that I play
+                    other then Valorant. Unfortunately, I am not the best competitive PvP gamer out there, but that's all right because we play for fun! Unless it's a rank match.
+                    Then it's all serious. 
+                </p>
+                <p id="about-me-sum">
+                    Sports? I like those too. Basketball is always fun. So is volleyball, until you volley the ball wrong and hurt your thumb. Badminton is a blast.
+                    Ping Pong is just like badminton (not really) so that's fun too! There's pool (billards?) which is great to play in a 2v2 with friends. Basically
+                    if we can have fun, I'd like it.
+                </p>
+            </div>
+            
+        </div>
+
+    </div>
+</section>
+ 
+<!-- Work Experience -->
+<section class="work-exp" id="work-hist">
+    <h2 class="section_title title_work">
+        Work Experience
+    </h2>
+
+    <div class="companies">
+        <div class="company-wrapper" *ngFor="let comp of companies; let i = index">
+            <div class="company  {{i%2==0 ? 'companyL' : 'companyR'}}">
+                <img [src]="comp.src" class="work-images">
+                <h4>{{comp.name}}</h4>
+                <h5>{{comp.position}}</h5>
+                <p>{{comp.desc}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section class="proj" id="proj">
+    <h2 class="section_title text-center title_work">My Projects</h2>
+    <div class="projects">
+        <div class="project" *ngFor="let project of projects">
+            <a href="{{project.link}}" target="_blank" style="text-decoration: none; min-height: 100%;">
+                <div class="text-center panel panel-default pan-hov" style="margin-bottom: 0px; height: 100%;">
+                    <div style="padding: 7px;">
+                        <i class="fas fa-4x {{project.iclass}}" aria-hidden="true"></i>
+                        <h4>{{project.name}}</h4>
+                        <p style="color: black;">{{project.desc}}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+ <!-- Footer -->
+ <footer class="footer" id="foot">
+    <a href="mailto:ssatin360@gmail.com" id="mail">ssatin360@gmail.com</a>
+    <ul class="social-list">
+        <li class="social-list_item"><a class="social-list_link" href="https://www.linkedin.com/in/satindersikand/" target="_blank"><i class="fab fa-linkedin fa-2x icon-color"></i></a></li>
+        <li class="social-list_item"><a class="social-list_link" href="https://www.instagram.com/s.sikand/" target="_blank"><i class="fab fa-instagram fa-2x icon-color"></i></a></li>
+        <li class="social-list_item"><a class="social-list_link" href="https://github.com/Satinder-Sikand" target="_blank"><i class="fab fa-github fa-2x icon-color"></i></a></li>
+    </ul>
+</footer>

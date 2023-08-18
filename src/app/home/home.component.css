@@ -1,0 +1,131 @@
+/* About me */
+.about {
+    background-color: var(--clr-dark);
+    background-size: cover;
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.subtitle-about {
+    background: #E1E1E1;
+    padding: .25em 1.5em;
+    margin-top: 0.5rem;
+    font-family: var(--ff-secondary);
+    margin-top: 1.2rem;
+    margin-bottom: 1em;
+    color: #303030;
+    display: inline-block;
+}
+
+.learn-more {
+    background-color: #E1E1E1; color: #303030; padding-top: 1.5rem; padding-bottom: 1.4rem; 
+}
+
+.learn-more.active {
+    max-height: max-content;
+    transition: max-height 1s ease-in-out;
+
+}
+
+.project,
+.company {
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    
+    background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex; /* Use flex to vertically align card content */
+  flex-direction: column; /* Stack content vertically */
+}
+
+
+.company img {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto 10px;
+  }
+  
+  .company h4 {
+    margin: 0;
+    /* font-size: 1.8rem; */
+    color: #000000;
+  }
+  
+  .company h5 {
+    margin: 5px 0;
+    /* font-size: 1.5rem; */
+    color: #000000;
+  }
+  
+  .company p {
+    margin: 10px 0;
+    /* font-size: 1.3rem; */
+    color: #000000;
+  }
+
+.work-images {
+    display:block;
+    max-height: 40px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+/* Projects */
+.pan-hov:hover i {
+    color: var(--clr-accent);
+    transform: scale(1.1);
+}
+
+
+@media (min-width: 800px) {
+    #about-me-sum {
+        /* display: flex; */
+        max-width: 90%;
+        margin: 0 auto 10px;
+        font-family: 'Source Code Pro';
+    }
+
+    .projects,
+    .companies {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        flex-direction: column;
+        max-width: 90%;
+      margin: 0 auto;
+      }
+
+      .companyL {
+          width: 70%;
+          float: left;
+      }
+      .companyR {
+        width: 70%;
+        float: right;
+      }
+      .project + .project,
+      .company + .company {
+          margin-left: 2em;
+      }
+      .projects {
+          flex-direction: row;
+          /* margin: 0px; */
+      }
+      .project {
+          /* margin: auto 0px; */
+          margin-right: 0;
+          margin-left: 0;
+      }
+}
+
+.panel:hover {
+    background-color: #A5C9FF;
+    color: #000000;
+}
+
+.panel:hover i, h4 {
+    color: #000000;
+}

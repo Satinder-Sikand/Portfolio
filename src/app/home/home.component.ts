@@ -72,6 +72,14 @@ export class HomeComponent {
 
   projects = [
     {
+      "link": "https://github.com/Satinder-Sikand/personal-finance-tracker",
+      "name": "Personal Finance Tracker",
+      "desc": "Have you ever wanted to keep a track of your finances? Make a list of your expenditures? See how much everything is costing you, but "
+              + "don't want to bother with the hassle of making an Excel file and all those pesky SUM() commands? Then this is the perfect option for you. "
+              + "You can do all that here with an intuitive and simple UI. ",
+      "iclass": "fa-money-bill-alt"
+    },
+    {
       "link": "https://github.com/LassondeCapstoneGroup20/LassondeProjectsInventory",
       "name": "Lassonde Projects Inventory",
       "desc": "This was a project that was created on behlaf of the Lassonde capstone team. It is a Django web app that allows Capstone coordinators to "+

@@ -1,33 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import './App.css';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import { blue, pink } from '@mui/material/colors';
+import Box from '@mui/material/Box';
+import { Typography } from '@mui/material';
+import NavBar from './components/NavBar';
+
+// Theme
+const theme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: {
+      main: blue[500]
+    },
+    secondary: {
+      main: pink[500]
+    },
+    background: {
+      default: '#f5f5f5',
+      paper: '#ffffff'
+    },
+  },
+  typography: {
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif'
+  }
+});
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  // Scroller
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <ThemeProvider theme={theme}>
+      <CssBaseline></CssBaseline>
+      <Box sx={{display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
+       <Typography variant='h4'>This is an app acomponent.</Typography> 
+        <NavBar></NavBar>
+      </Box>
+    </ThemeProvider>
     </>
   )
 }

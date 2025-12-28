@@ -11,15 +11,8 @@ function Hero() {
         minHeight={{ md: "90vh" }}
         display="flex"
         flexWrap="wrap"
-        alignItems={{ xs: "flex-start", md: "center" }} // Align to top on mobile        textAlign="center"
-        // justifyContent={"center"}
+        alignItems={{ sm: "flex-start", md: "center" }} // Align to top on mobile        textAlign="center"
         width="90%"
-        // position="relative"
-        // left="50%"
-        // right="50%"
-        // marginLeft="-50vw"
-        // marginRight="-50vw"
-        // gap={-1}
       >
         {/* image */}
         <Box
@@ -36,10 +29,7 @@ function Hero() {
             alt="turban image"
             width={{ xs: 290, md: 490 }}
             sx={{
-              //   width: "100%",
-              //   maxWidth: 290,
               height: "auto",
-              //   objectFit: "contain",
             }}
           />
         </Box>
@@ -50,27 +40,7 @@ function Hero() {
           alignItems={{ xs: "flex-start", md: "flex-start" }} // Center on mobile, left-align on medium+
           textAlign={{ xs: "center", md: "left" }} // Center text on mobile, left on medium+
         >
-          <Typography variant="h4">
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString("Hi")
-                  .pauseFor(300)
-                  .typeString(
-                    ', it\'s <span style="color: #64ffda">Satinder</span>'
-                  )
-                  .pauseFor(1000)
-                  .start();
-              }}
-              options={{
-                cursor: '<span style="color: #64ffda">|</span>',
-                delay: 50,
-                loop: false,
-                autoStart: true,
-                wrapperClassName: "typewriter-text",
-              }}
-            />
-          </Typography>
+          <TypingIntro />
           <Typography variant="subtitle2" sx={{ py: 2 }}>
             I'm a
             <BoldedText
@@ -97,32 +67,27 @@ function BoldedText({ fontWeight, text, color = "inherit" }) {
   );
 }
 
-function originalTypeWriter() {
+function TypingIntro() {
   return (
-    <Typewriter
-      onInit={(typewriter) => {
-        typewriter
-          .typeString("Hi, I'm ")
-          .pauseFor(300)
-          .typeString('<span style="color: #64ffda">Satinder</span>')
-          .pauseFor(1000)
-          .deleteAll()
-          .typeString(
-            '<span style="color: #64ffda">Full Stack Developer</span>'
-          )
-          .pauseFor(1000)
-          .deleteAll()
-          .typeString('<span style="color: #64ffda">Software Engineer</span>')
-          .start();
-      }}
-      options={{
-        cursor: '<span style="color: #64ffda">|</span>',
-        delay: 50,
-        loop: true,
-        autoStart: true,
-        wrapperClassName: "typewriter-text",
-      }}
-    />
+    <Typography variant="h4">
+      <Typewriter
+        onInit={(typewriter) => {
+          typewriter
+            .typeString("Hi")
+            .pauseFor(300)
+            .typeString(', it\'s <span style="color: #64ffda">Satinder</span>')
+            .pauseFor(1000)
+            .start();
+        }}
+        options={{
+          cursor: '<span style="color: #64ffda">|</span>',
+          delay: 50,
+          loop: false,
+          autoStart: true,
+          wrapperClassName: "typewriter-text",
+        }}
+      />
+    </Typography>
   );
 }
 

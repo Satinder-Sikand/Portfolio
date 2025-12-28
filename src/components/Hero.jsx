@@ -1,7 +1,11 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import Typewriter from "typewriter-effect";
 import mint_turban from "../assets/images/mint_turban.png";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import EmailIcon from "@mui/icons-material/Email";
 
 function Hero() {
   return (
@@ -53,6 +57,7 @@ function Hero() {
             major feature launches in industry-leading services, and am open to
             new challenges that push the boundaries of great software.
           </Typography>
+          <Socials />
         </Box>
       </Box>
     </Box>
@@ -88,6 +93,67 @@ function TypingIntro() {
         }}
       />
     </Typography>
+  );
+}
+
+function Socials() {
+  const socialLinks = [
+    {
+      platform: "Github",
+      icon: <GitHubIcon />,
+      url: "https://github.com/Satinder-Sikand/",
+    },
+    {
+      platform: "LinkedIn",
+      icon: <LinkedInIcon />,
+      url: "https://linkedin.com/in/satindersikand/",
+    },
+    {
+      platform: "Instagram",
+      icon: <InstagramIcon />,
+      url: "https://instagram.com/s.sikand/",
+    },
+    {
+      platform: "Email",
+      icon: <EmailIcon />,
+      url: "mailto:ssatin360@gmail.com",
+    },
+  ];
+
+  const handleSocialClick = (url) => {
+    window.open(url, "_blank");
+  };
+
+  return (
+    <Box
+      display="flex"
+      justifyContent={{ xs: "center", md: "flex-start" }}
+      width="100%"
+      mt={2}
+      gap={{ xs: 1.5, md: 2 }}
+    >
+      {socialLinks.map((link) => (
+        <IconButton
+          key={link.platform}
+          onClick={() => handleSocialClick(link.url)}
+          aria-label={`Visit my ${link.platform}`}
+          sx={{
+            color: "#ccd6f6",
+            border: "1px solid rgba(100, 255, 218, 0.2)",
+            "&:hover": {
+              color: "#64ffda",
+              borderColor: "#64ffda",
+              backgroundColor: "rgba(100, 255, 218, 0.1)",
+              transform: "rotate(-15deg) translateY(-3px)",
+            },
+            transition: "all 0.3s ease",
+            padding: { xs: "8px", md: "10px" },
+          }}
+        >
+          {link.icon}
+        </IconButton>
+      ))}
+    </Box>
   );
 }
 

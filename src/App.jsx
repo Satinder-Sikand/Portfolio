@@ -1,4 +1,3 @@
-// App.jsx
 import * as React from "react";
 import NavBar from "./components/NavBar";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -32,26 +31,33 @@ export default function App() {
         secondary: "#ccd6f6",
         primary: "#8892b0",
       },
-      headerText: {
-        main: "#ccd6f6",
-      },
     },
     typography: {
       fontFamily: `"Inter", "Roboto", sans-serif`,
       h1: {
-        color: "secondary",
+        color: "#ccd6f6",
       },
       h2: {
-        color: "secondary",
+        color: "#ccd6f6",
       },
       h3: {
-        color: "secondary",
+        color: "#ccd6f6",
       },
       h4: {
         color: "#ccd6f6",
+        fontSize: "2.1rem",
+        "@media (min-width:900px)": {
+          fontSize: "3.8rem",
+        },
       },
       h5: {
-        color: "secondary",
+        color: "#ccd6f6",
+      },
+      subtitle2: {
+        fontSize: "0.87rem",
+        "@media (min-width:900px)": {
+          fontSize: "1rem",
+        },
       },
     },
   });
@@ -60,18 +66,10 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline></CssBaseline>
       <NavBar />
-      <Box id="hero">
-        <Hero></Hero>
-      </Box>
-      <Box id="about">
-        <About></About>
-      </Box>
-      <Box id="experience">
-        <Experience></Experience>
-      </Box>
-      <Box id="projects">
-        <Projects></Projects>
-      </Box>
+      <Hero></Hero>
+      <About></About>
+      <Experience></Experience>
+      <Projects></Projects>
     </ThemeProvider>
   );
 }

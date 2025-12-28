@@ -1,20 +1,55 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import Typewriter from "typewriter-effect";
+import mint_turban from "../assets/images/mint_turban.png";
 
 function Hero() {
   return (
-    <>
+    <Box width="100vw" display="flex" justifyContent="center">
       <Box
         id="hero"
-        minHeight="100vh"
+        minHeight={{ md: "90vh" }}
         display="flex"
-        alignItems="center"
-        textAlign="center"
-        width={"90%"}
-        mx={"auto"}
+        flexWrap="wrap"
+        alignItems={{ xs: "flex-start", md: "center" }} // Align to top on mobile        textAlign="center"
+        // justifyContent={"center"}
+        width="90%"
+        // position="relative"
+        // left="50%"
+        // right="50%"
+        // marginLeft="-50vw"
+        // marginRight="-50vw"
+        // gap={-1}
       >
-        <Box display="flex-column">
+        {/* image */}
+        <Box
+          flex="0 1 auto"
+          display="flex"
+          mb={{ xs: 0 }}
+          sx={{
+            mx: "auto",
+          }}
+        >
+          <Box
+            component="img"
+            src={mint_turban}
+            alt="turban image"
+            width={{ xs: 290, md: 490 }}
+            sx={{
+              //   width: "100%",
+              //   maxWidth: 290,
+              height: "auto",
+              //   objectFit: "contain",
+            }}
+          />
+        </Box>
+        <Box
+          maxWidth="600px"
+          flex="2 1 300px" // flex-grow: 2, flex-shrink: 1, flex-basis: 300px          display="flex"
+          flexDirection="column"
+          alignItems={{ xs: "flex-start", md: "flex-start" }} // Center on mobile, left-align on medium+
+          textAlign={{ xs: "center", md: "left" }} // Center text on mobile, left on medium+
+        >
           <Typography variant="h4">
             <Typewriter
               onInit={(typewriter) => {
@@ -22,7 +57,7 @@ function Hero() {
                   .typeString("Hi")
                   .pauseFor(300)
                   .typeString(
-                    ', I\'m <span style="color: #64ffda">Satinder</span>'
+                    ', it\'s <span style="color: #64ffda">Satinder</span>'
                   )
                   .pauseFor(1000)
                   .start();
@@ -36,22 +71,21 @@ function Hero() {
               }}
             />
           </Typography>
-          <Typography variant="subtitle2" sx={{ py: 1 }}>
+          <Typography variant="subtitle2" sx={{ py: 2 }}>
             I'm a
             <BoldedText
               fontWeight="fontWeightMedium"
               text={" Software Engineer "}
               color="#64ffda"
             />
-            based out of Toronto, Canada. I'm driven by clean code, thoughtful
-            abstractions, and (of course) just enough caffeine. I've contributed
-            to major feature launches in industry-leading services, and am
-            always open to new challenges that push the boundaries of great
-            software.
+            based in Toronto, Canada. I'm driven by clean code, high-impact
+            products, and (of course) lots of caffeine. I've contributed to
+            major feature launches in industry-leading services, and am open to
+            new challenges that push the boundaries of great software.
           </Typography>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }
 

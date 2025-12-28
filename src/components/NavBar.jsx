@@ -130,6 +130,7 @@ export default function NavBar() {
   return (
     <>
       <AppBar
+        id="navbar"
         // position="fixed"
         elevation={0}
         sx={{

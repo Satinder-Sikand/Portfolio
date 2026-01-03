@@ -45,16 +45,39 @@ export default function App() {
       },
       h4: {
         color: "#ccd6f6",
-        fontSize: "2.1rem",
+        fontSize: "2.2rem",
         "@media (min-width:900px)": {
-          fontSize: "3.8rem",
+          fontSize: "3.9rem",
         },
       },
       h5: {
         color: "#ccd6f6",
+        fontSize: "1.9rem",
+        "@media (min-width:900px)": {
+          fontSize: "3.6rem",
+        },
+      },
+      h6: {
+        color: "#ccd6f6",
+        fontSize: "1.4rem",
+        "@media (min-width:900px)": {
+          fontSize: "2.4rem",
+        },
+      },
+      subtitle1: {
+        fontSize: "1.1rem",
+        "@media (min-width:900px)": {
+          fontSize: "1.2rem",
+        },
       },
       subtitle2: {
-        fontSize: "0.87rem",
+        fontSize: "0.97rem",
+        "@media (min-width:900px)": {
+          fontSize: "1.1rem",
+        },
+      },
+      body1: {
+        fontSize: "0.9rem",
         "@media (min-width:900px)": {
           fontSize: "1rem",
         },

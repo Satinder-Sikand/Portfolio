@@ -1,12 +1,10 @@
 import React from "react";
 import { Box, Typography, Grid, useTheme } from "@mui/material";
-// import aboutMeImage from "../assets/images/me_in_black_sweater.jpg";
 import aboutMeImage from "../assets/images/me_near_a_pond.jpg";
 import SectionHeader from "./SectionHeader";
 import BodyTypography from "./BodyTypography";
 import FadeInSection from "./FadeInView";
 import Section from "./Section";
-// import aboutMeImage from "../assets/images/me_between_buildings2.jpg";
 
 function About() {
   const technologies = [
@@ -15,7 +13,6 @@ function About() {
     "Python",
     "Java",
     "Docker & Kubernetes",
-
     "SQL & NoSQL",
     "AWS",
     "Git",

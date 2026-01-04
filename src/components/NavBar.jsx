@@ -17,6 +17,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import resumePDF from "../assets/images/Satinder_Sikand_Resume.pdf";
 
 export default function NavBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -207,7 +208,7 @@ export default function NavBar() {
                 ))}
                 <Button
                   variant="outlined"
-                  href="/resume.pdf"
+                  href={resumePDF}
                   target="_blank"
                   sx={{
                     color: "#64ffda",
@@ -222,6 +223,7 @@ export default function NavBar() {
                     "&:hover": {
                       backgroundColor: "rgba(100, 255, 218, 0.1)",
                       borderColor: "#64ffda",
+                      color: "#64ffda",
                     },
                   }}
                 >

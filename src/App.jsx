@@ -11,10 +11,11 @@ import {
   Box,
   CssBaseline,
 } from "@mui/material";
-import Experience from "./components/Experience";
-import Projects from "./components/Projects";
+import Experience from "./components/experience/Experience";
+import Projects from "./components/projects/Projects";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Footer from "./components/Footer";
 
 export default function App() {
   const theme = createTheme({
@@ -93,6 +94,7 @@ export default function App() {
       <About></About>
       <Experience></Experience>
       <Projects></Projects>
+      <Footer></Footer>
     </ThemeProvider>
   );
 }

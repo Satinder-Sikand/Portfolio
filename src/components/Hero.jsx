@@ -1,13 +1,10 @@
-import React from "react";
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import Typewriter from "typewriter-effect";
 import mint_turban from "../assets/images/mint_turban.png";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import EmailIcon from "@mui/icons-material/Email";
+import Socials from "./Socials";
 
 function Hero() {
+  const theme = useTheme();
   return (
     <Box width="100vw" display="flex" justifyContent="center">
       <Box
@@ -50,14 +47,17 @@ function Hero() {
             <BoldedText
               fontWeight="fontWeightMedium"
               text={" Software Engineer "}
-              color="#64ffda"
+              color={theme.palette.primary.main}
             />
             based in Toronto, Canada. I'm driven by clean code, high-impact
             products, and (of course) lots of caffeine. I've contributed to
             major feature launches in industry-leading services, and am open to
             new challenges that push the boundaries of great software.
           </Typography>
-          <Socials />
+          <Socials
+            size={{ xs: "8px", md: "10px" }}
+            justifyContent={{ xs: "center", md: "flex-start" }}
+          />
         </Box>
       </Box>
     </Box>
@@ -73,6 +73,7 @@ function BoldedText({ fontWeight, text, color = "inherit" }) {
 }
 
 function TypingIntro() {
+  const theme = useTheme();
   return (
     <Typography variant="h4">
       <Typewriter
@@ -80,12 +81,14 @@ function TypingIntro() {
           typewriter
             .typeString("Hi")
             .pauseFor(300)
-            .typeString(', it\'s <span style="color: #64ffda">Satinder</span>')
+            .typeString(
+              `, it's <span style="color: ${theme.palette.primary.main}">Satinder</span>`
+            )
             .pauseFor(1000)
             .start();
         }}
         options={{
-          cursor: '<span style="color: #64ffda">|</span>',
+          cursor: `<span style="color: ${theme.palette.primary.main}">|</span>`,
           delay: 50,
           loop: false,
           autoStart: true,
@@ -93,67 +96,6 @@ function TypingIntro() {
         }}
       />
     </Typography>
-  );
-}
-
-function Socials() {
-  const socialLinks = [
-    {
-      platform: "Github",
-      icon: <GitHubIcon />,
-      url: "https://github.com/Satinder-Sikand/",
-    },
-    {
-      platform: "LinkedIn",
-      icon: <LinkedInIcon />,
-      url: "https://linkedin.com/in/satindersikand/",
-    },
-    {
-      platform: "Instagram",
-      icon: <InstagramIcon />,
-      url: "https://instagram.com/s.sikand/",
-    },
-    {
-      platform: "Email",
-      icon: <EmailIcon />,
-      url: "mailto:ssatin360@gmail.com",
-    },
-  ];
-
-  const handleSocialClick = (url) => {
-    window.open(url, "_blank");
-  };
-
-  return (
-    <Box
-      display="flex"
-      justifyContent={{ xs: "center", md: "flex-start" }}
-      width="100%"
-      mt={2}
-      gap={{ xs: 1.5, md: 2 }}
-    >
-      {socialLinks.map((link) => (
-        <IconButton
-          key={link.platform}
-          onClick={() => handleSocialClick(link.url)}
-          aria-label={`Visit my ${link.platform}`}
-          sx={{
-            color: "#ccd6f6",
-            border: "1px solid rgba(100, 255, 218, 0.2)",
-            "&:hover": {
-              color: "#64ffda",
-              borderColor: "#64ffda",
-              backgroundColor: "rgba(100, 255, 218, 0.1)",
-              transform: "rotate(-15deg) translateY(-3px)",
-            },
-            transition: "all 0.3s ease",
-            padding: { xs: "8px", md: "10px" },
-          }}
-        >
-          {link.icon}
-        </IconButton>
-      ))}
-    </Box>
   );
 }
 

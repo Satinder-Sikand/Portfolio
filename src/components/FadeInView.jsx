@@ -1,4 +1,4 @@
-import { React, useRef } from "react";
+import { useRef } from "react";
 import { Box } from "@mui/material";
 import { useInView } from "framer-motion"; // or use react-intersection-observer
 
@@ -15,7 +15,6 @@ function FadeInSection({ children }) {
         justifyContent: "center",
         padding: 0,
         margin: 0,
-        // py: { xs: 6, md: 10 },
         opacity: isInView ? 1 : 0,
         transform: isInView ? "translateY(0)" : "translateY(50px)",
         transition: "opacity 0.6s ease, transform 1s ease",
